@@ -17,9 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -488,6 +486,24 @@ public class DriverBase {
 
 	public void switchToDefaultContent() {
 		driver.switchTo().defaultContent();
+	}
+	
+	public String getAttribute(String locType, String identifier , String attribute) {
+		if (isElementPresent(locType, identifier)) {
+			if (locType.trim().equalsIgnoreCase("XPATH"))
+				return driver.findElement(By.xpath(identifier)).getAttribute(attribute);
+			else if (locType.trim().equalsIgnoreCase("CSS"))
+				return driver.findElement(By.cssSelector(identifier)).getAttribute(attribute);
+			else if (locType.trim().equalsIgnoreCase("ID"))
+				return driver.findElement(By.id(identifier)).getAttribute(attribute);
+			else if (locType.trim().equalsIgnoreCase("NAME"))
+				return driver.findElement(By.name(identifier)).getAttribute(attribute);
+			else if (locType.trim().equalsIgnoreCase("CLASSNAME"))
+				return driver.findElement(By.className(identifier)).getAttribute(attribute);
+		} else {
+			System.out.println("Element " + identifier + " not found");
+		}
+		return "";
 	}
 
 	public boolean isTextPresent(String locType, String identifier, String text) {

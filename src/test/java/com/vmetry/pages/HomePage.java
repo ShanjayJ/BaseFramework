@@ -21,6 +21,10 @@ public class HomePage extends HomeLocator {
 //		driver.click("CSS", BOOK_BTN_CSS);
 	}
 	
+	public void ClickLogin() {
+		driver.click("LINK", LOGIN_LINK);
+	}
+	
 	/*protected void validateLoginSuccess(String loginUser) {
 	s_assert.assertTrue(driver.isElementPresent("CK_SignIn_LogOut_xpath"),
 			DriverBase.prop.getProperty("CK_Generic_ErrorMsg").trim());

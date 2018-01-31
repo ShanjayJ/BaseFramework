@@ -9,4 +9,9 @@
 			<class name="com.vmetry.testcases.Booking" />
 		</classes>
 	</test> <!-- Default test -->
+	<test verbose="2" name="SignIN">
+		<classes>
+			<class name="com.vmetry.testcases.SignIn" />
+		</classes>
+	</test> <!-- Default test -->
 </suite> <!-- Default suite -->

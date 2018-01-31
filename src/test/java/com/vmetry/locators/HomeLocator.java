@@ -1,7 +1,7 @@
 package com.vmetry.locators;
 
 public class HomeLocator {
-	protected String NAME_ID, MOB_NUMB_ID, PICK_UP_ID, DROP_ID, CAR_TYPE_NAME, BOOK_BTN_CSS;
+	protected String NAME_ID, MOB_NUMB_ID, PICK_UP_ID, DROP_ID, CAR_TYPE_NAME, BOOK_BTN_CSS , LOGIN_LINK;
 
 	public HomeLocator() {
 		NAME_ID = "nameid";
@@ -10,5 +10,6 @@ public class HomeLocator {
 		DROP_ID = "dropid";
 		CAR_TYPE_NAME = "VehicleType";
 		BOOK_BTN_CSS = "input[value='Book']";
+		LOGIN_LINK = "Login";
 	}
 }
